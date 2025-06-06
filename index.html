@@ -1,115 +1,110 @@
-<!DOCTYPE html><html lang="en">
+<!DOCTYPE html>
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Chaos Art</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Art of Chaos - Home</title>
   <style>
-    body {
+    /* Reset بسيط */
+    * {
+      box-sizing: border-box;
       margin: 0;
-      font-family: 'Segoe UI', sans-serif;
-      background-color: #0a0a0a;
-      color: #f0f0f0;
-    }nav {
-  background-color: #111;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 1rem 2rem;
-}
+      padding: 0;
+    }
 
-.logo {
-  font-size: 1.5rem;
-  font-weight: bold;
-}
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #121212;
+      color: #eee;
+      line-height: 1.6;
+    }
 
-.menu {
-  display: flex;
-  gap: 1.5rem;
-}
+    /* Navbar */
+    nav {
+      background-color: #1f1f1f;
+      padding: 15px 30px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
 
-.menu a {
-  color: #f0f0f0;
-  text-decoration: none;
-  font-weight: bold;
-}
+    nav .logo {
+      font-weight: bold;
+      font-size: 1.5rem;
+      color: #ff4c60;
+      cursor: default;
+    }
 
-.language-switch {
-  background: #222;
-  color: #fff;
-  border: none;
-  padding: 0.5rem 1rem;
-  cursor: pointer;
-  border-radius: 5px;
-}
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 20px;
+    }
 
-header {
-  text-align: center;
-  padding: 4rem 2rem;
-}
+    nav ul li a {
+      color: #eee;
+      text-decoration: none;
+      font-weight: 600;
+      transition: color 0.3s ease;
+    }
 
-header h1 {
-  font-size: 3rem;
-  margin-bottom: 1rem;
-}
+    nav ul li a:hover {
+      color: #ff4c60;
+    }
 
-header p {
-  font-size: 1.2rem;
-  color: #ccc;
-}
+    /* Main content */
+    .container {
+      max-width: 900px;
+      margin: 40px auto;
+      padding: 0 15px;
+      text-align: center;
+    }
 
-.gallery-preview {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 2rem;
-  padding: 2rem;
-}
+    h1 {
+      margin-bottom: 15px;
+      font-size: 2.5rem;
+      color: #ff4c60;
+    }
 
-.gallery-preview a {
-  text-decoration: none;
-  color: inherit;
-}
+    p {
+      font-size: 1.2rem;
+      color: #ccc;
+    }
 
-.gallery-preview img {
-  width: 250px;
-  border-radius: 10px;
-  transition: transform 0.3s;
-}
-
-.gallery-preview img:hover {
-  transform: scale(1.05);
-}
-
+    /* Footer */
+    footer {
+      margin-top: 60px;
+      padding: 15px 0;
+      background-color: #1f1f1f;
+      color: #888;
+      text-align: center;
+      font-size: 0.9rem;
+    }
   </style>
 </head>
 <body>
+
   <nav>
-    <div class="logo">Chaos Art</div>
-    <div class="menu">
-      <a href="gallery.html" id="link-gallery">Gallery</a>
-      <a href="about.html" id="link-about">About</a>
-      <a href="contact.html" id="link-contact">Contact</a>
-    </div>
-    <button class="language-switch" onclick="toggleLanguage()">AR</button>
-  </nav>  <header>
-    <h1 id="welcome-title">Welcome to Chaos Art</h1>
-    <p id="welcome-text">Explore melancholic, symbolic, and introspective works.</p>
-  </header>  <section class="gallery-preview">
-    <a href="unfinished.html">
-      <img src="https://i.postimg.cc/Y0NLbFHy/IMG-20250526-135807.jpg" alt="Unfinished">
-    </a>
-  </section>  <script>
-    let isArabic = false;
+    <div class="logo">Art of Chaos</div>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="gallery.html">Gallery</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
 
-    function toggleLanguage() {
-      isArabic = !isArabic;
+  <div class="container">
+    <h1>Welcome to Art of Chaos</h1>
+    <p>Your personal art gallery online. Discover the stories behind each creation and connect for commissions or collaborations.</p>
+  </div>
 
-      document.querySelector('.language-switch').textContent = isArabic ? 'EN' : 'AR';
-      document.getElementById('link-gallery').textContent = isArabic ? 'اللوحات' : 'Gallery';
-      document.getElementById('link-about').textContent = isArabic ? 'من أنا' : 'About';
-      document.getElementById('link-contact').textContent = isArabic ? 'تواصل' : 'Contact';
-      document.getElementById('welcome-title').textContent = isArabic ? 'مرحباً بك في Chaos Art' : 'Welcome to Chaos Art';
-      document.getElementById('welcome-text').textContent = isArabic ? 'استكشف أعمالاً حزينة، رمزية، وتأملية.' : 'Explore melancholic, symbolic, and introspective works.';
-    }
-  </script></body>
+  <footer>
+    &copy; 2025 Art of Chaos. All rights reserved.
+  </footer>
+
+</body>
 </html>
