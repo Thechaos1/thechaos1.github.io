@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Contact - Chaos Art</title>
+  <style>
+    body {
+      background: #101010;
+      color: #eee;
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0; padding: 0;
+    }
+    nav {
+      background-color: #111;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 2rem;
+    }
+    nav .logo {
+      font-size: 1.5rem;
+      font-weight: bold;
+      color: #f0f0f0;
+    }
+    nav .menu {
+      display: flex;
+      gap: 1.5rem;
+    }
+    nav .menu a {
+      color: #f0f0f0;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    .language-switch {
+      background: #222;
+      color: #fff;
+      border: none;
+      padding: 0.4rem 1rem;
+      cursor: pointer;
+      border-radius: 5px;
+    }
+    header {
+      text-align: center;
+      padding: 2rem 1rem;
+    }
+    header h1 {
+      margin: 0 0 1rem 0;
+    }
+    .content {
+      max-width: 500px;
+      margin: 0 auto;
+      padding: 0 1rem 3rem 1rem;
+    }
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+    input, textarea {
+      padding: 0.7rem;
+      border-radius: 6px;
+      border: none;
+      font-size: 1rem;
+    }
+    button {
+      background-color: #00ccff;
+      border: none;
+      padding: 0.7rem;
+      border-radius: 6px;
+      font-weight: bold;
+      cursor: pointer;
+      color: #101010;
+      transition: background-color 0.3s ease;
+    }
+    button:hover {
+      background-color: #0099cc;
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <div class="logo">Chaos Art</div>
+    <div class="menu">
+      <a href="index.html" id="link-home">Home</a>
+      <a href="gallery.html" id="link-gallery">Gallery</a>
+      <a href="about.html" id="link-about">About</a>
+    </div>
+    <button class="language-switch" onclick="toggleLanguage()">AR</button>
+  </nav>
+
+  <header>
+    <h1 id="contact-title">Contact Me</h1>
+  </header>
+
+  <section class="content">
+    <form id="contact-form" action="mailto:artofchaos25@gmail.com" method="POST" enctype="text/plain">
+      <input type="text" name="name" id="name" placeholder="Your Name" required />
+      <input type="email" name="email" id="email" placeholder="Your Email" required />
+      <textarea name="message" id="message" rows="6" placeholder="Your Message" required></textarea>
+      <button type="submit" id="submit-btn">Send</button>
+    </form>
+  </section>
+
+  <script>
+    let isArabic = false;
+
+    function toggleLanguage() {
+      isArabic = !isArabic;
+      document.querySelector('.language-switch').textContent = isArabic ? 'EN' : 'AR';
+      document.getElementById('link-home').textContent = isArabic ? 'الرئيسية' : 'Home';
+      document.getElementById('link-gallery').textContent = isArabic ? 'اللوحات' : 'Gallery';
+      document.getElementById('link-about').textContent = isArabic ? 'من أنا' : 'About';
+      document.getElementById('contact-title').textContent = isArabic ? 'تواصل معي' : 'Contact Me';
+
+      if (isArabic) {
+        document.getElementById('name').placeholder = 'اسمك';
+        document.getElementById('email').placeholder = 'بريدك الإلكتروني';
+        document.getElementById('message').placeholder = 'رسالتك';
+        document.getElementById('submit-btn').textContent = 'إرسال';
+      } else {
+        document.getElementById('name').placeholder = 'Your Name';
+        document.getElementById('email').placeholder = 'Your Email';
+        document.getElementById('message').placeholder = 'Your Message';
+        document.getElementById('submit-btn').textContent = 'Send';
+      }
+    }
+  </script>
+</body>
+</html>
