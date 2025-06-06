@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>About - Chaos Art</title>
+  <style>
+    body {
+      background: #101010;
+      color: #eee;
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0; padding: 0;
+      line-height: 1.6;
+    }
+    nav {
+      background-color: #111;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 2rem;
+    }
+    nav .logo {
+      font-size: 1.5rem;
+      font-weight: bold;
+      color: #f0f0f0;
+    }
+    nav .menu {
+      display: flex;
+      gap: 1.5rem;
+    }
+    nav .menu a {
+      color: #f0f0f0;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    .language-switch {
+      background: #222;
+      color: #fff;
+      border: none;
+      padding: 0.4rem 1rem;
+      cursor: pointer;
+      border-radius: 5px;
+    }
+    header {
+      text-align: center;
+      padding: 2rem 1rem;
+    }
+    header h1 {
+      margin: 0 0 1rem 0;
+    }
+    .content {
+      max-width: 700px;
+      margin: 0 auto;
+      padding: 0 1rem 3rem 1rem;
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <div class="logo">Chaos Art</div>
+    <div class="menu">
+      <a href="index.html" id="link-home">Home</a>
+      <a href="gallery.html" id="link-gallery">Gallery</a>
+      <a href="contact.html" id="link-contact">Contact</a>
+    </div>
+    <button class="language-switch" onclick="toggleLanguage()">AR</button>
+  </nav>
+
+  <header>
+    <h1 id="about-title">About Me</h1>
+  </header>
+
+  <section class="content" id="about-content">
+    <p>Hello! I am an artist who explores melancholic and symbolic themes in my work. My paintings reflect the complex, sometimes painful aspects of human existence and the beauty found within imperfection.</p>
+    <p>I invite you to explore my gallery and feel free to contact me for commissions or collaborations.</p>
+  </section>
+
+  <script>
+    let isArabic = false;
+
+    function toggleLanguage() {
+      isArabic = !isArabic;
+      document.querySelector('.language-switch').textContent = isArabic ? 'EN' : 'AR';
+      document.getElementById('link-home').textContent = isArabic ? 'الرئيسية' : 'Home';
+      document.getElementById('link-gallery').textContent = isArabic ? 'اللوحات' : 'Gallery';
+      document.getElementById('link-contact').textContent = isArabic ? 'تواصل' : 'Contact';
+      document.getElementById('about-title').textContent = isArabic ? 'من أنا' : 'About Me';
+
+      if (isArabic) {
+        document.getElementById('about-content').innerHTML = `
+          <p>مرحباً! أنا فنان أستكشف المواضيع الحزينة والرمزية في أعمالي. لوحاتي تعكس الجوانب المعقدة وأحياناً المؤلمة للوجود الإنساني، والجمال الموجود في النقص.</p>
+          <p>أدعوكم لاستكشاف معرَضي ولا تترددوا بالتواصل معي من أجل طلب أعمال أو تعاون.</p>
+        `;
+      } else {
+        document.getElementById('about-content').innerHTML = `
+          <p>Hello! I am an artist who explores melancholic and symbolic themes in my work. My paintings reflect the complex, sometimes painful aspects of human existence and the beauty found within imperfection.</p>
+          <p>I invite you to explore my gallery and feel free to contact me for commissions or collaborations.</p>
+        `;
+      }
+    }
+  </script>
+</body>
+</html>
