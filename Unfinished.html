@@ -1,0 +1,59 @@
+<!DOCTYPE html><html lang="en"><head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Unfinished - Chaos Art</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head><body>
+  <header>
+    <nav class="navbar">
+      <div class="logo">CHAOS ART</div>
+      <input type="checkbox" id="menu-toggle">
+      <label for="menu-toggle" class="hamburger"><i class="fas fa-bars"></i></label>
+      <ul class="menu">
+        <li><a href="gallery.html" data-i18n="gallery">Gallery</a></li>
+        <li><a href="about.html" data-i18n="about">About</a></li>
+        <li><a href="contact.html" data-i18n="contact">Contact</a></li>
+        <li><button onclick="toggleLanguage()" id="lang-button">العربية</button></li>
+      </ul>
+    </nav>
+  </header>  <main class="artwork-detail">
+    <h1 data-i18n="unfinished-title">Unfinished</h1>
+    <img src="https://i.postimg.cc/Y0NLbFHy/IMG-20250526-135807.jpg" alt="Unfinished" class="art-image">
+    <div class="art-description">
+      <p data-i18n="unfinished-full">
+        A reflection of the incomplete human spirit — a visual embodiment of a being that is not whole. This piece invites contemplation about the essence of being human: Are we truly complete, or is our existence itself a process of becoming?
+      </p>
+    </div>
+  </main>  <footer>
+    <p>&copy; 2025 Chaos Art. All rights reserved.</p>
+  </footer>  <script>
+    function toggleLanguage() {
+      const currentLang = document.documentElement.lang;
+      if (currentLang === "en") {
+        document.documentElement.lang = "ar";
+        document.getElementById("lang-button").innerText = "English";
+        translateToArabic();
+      } else {
+        document.documentElement.lang = "en";
+        document.getElementById("lang-button").innerText = "العربية";
+        translateToEnglish();
+      }
+    }
+
+    function translateToArabic() {
+      document.querySelector('[data-i18n="gallery"]').innerText = "المعرض";
+      document.querySelector('[data-i18n="about"]').innerText = "عن الفنان";
+      document.querySelector('[data-i18n="contact"]').innerText = "تواصل";
+      document.querySelector('[data-i18n="unfinished-title"]').innerText = "غير مكتمل";
+      document.querySelector('[data-i18n="unfinished-full"]').innerText = "تجسيد بصري للروح البشرية الناقصة — كائن لم يكتمل. تدعوك هذه اللوحة للتأمل في جوهر الإنسان: هل نحن مكتملون حقاً أم أن وجودنا نفسه هو عملية تَشَكُّل دائم؟";
+    }
+
+    function translateToEnglish() {
+      document.querySelector('[data-i18n="gallery"]').innerText = "Gallery";
+      document.querySelector('[data-i18n="about"]').innerText = "About";
+      document.querySelector('[data-i18n="contact"]').innerText = "Contact";
+      document.querySelector('[data-i18n="unfinished-title"]').innerText = "Unfinished";
+      document.querySelector('[data-i18n="unfinished-full"]').innerText = "A reflection of the incomplete human spirit — a visual embodiment of a being that is not whole. This piece invites contemplation about the essence of being human: Are we truly complete, or is our existence itself a process of becoming?";
+    }
+  </script></body></html>
