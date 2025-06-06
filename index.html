@@ -1,160 +1,115 @@
 <!DOCTYPE html><html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Chaos Art Gallery</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chaos Art</title>
   <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
     body {
+      margin: 0;
       font-family: 'Segoe UI', sans-serif;
-      background: #111;
-      color: #f1f1f1;
-      line-height: 1.6;
-    }
-    header {
-      background: #222;
-      padding: 1rem;
-      text-align: center;
-    }
-    header h1 {
-      font-size: 2rem;
-      color: #fff;
-    }
-    nav {
-      background: #111;
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      padding: 1rem;
-      z-index: 1000;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-    .menu-toggle {
-      display: none;
-      font-size: 2rem;
-      cursor: pointer;
-    }
-    ul.nav-links {
-      display: flex;
-      justify-content: center;
-      gap: 2rem;
-      list-style: none;
-    }
-    ul.nav-links li a {
-      color: #fff;
-      text-decoration: none;
-    }
-    .lang-btn {
-      background: #333;
-      color: #fff;
-      padding: 0.4rem 1rem;
-      border: none;
-      cursor: pointer;
-      border-radius: 4px;
-    }
-    section {
-      padding: 4rem 2rem;
-      max-width: 1000px;
-      margin: auto;
-    }
-    .gallery {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 2rem;
-    }
-    .art-piece {
-      background: #1a1a1a;
-      padding: 1rem;
-      border-radius: 10px;
-      transition: transform 0.3s ease;
-    }
-    .art-piece:hover {
-      transform: scale(1.03);
-    }
-    .art-piece img {
-      width: 100%;
-      border-radius: 8px;
-      cursor: pointer;
-    }
-    footer {
-      text-align: center;
-      padding: 2rem;
-      background: #111;
-      color: #888;
-    }
-    @media (max-width: 768px) {
-      ul.nav-links {
-        display: none;
-        flex-direction: column;
-        background: #222;
-        position: absolute;
-        top: 3rem;
-        left: 0;
-        width: 100%;
-      }
-      ul.nav-links.active {
-        display: flex;
-      }
-      .menu-toggle {
-        display: block;
-      }
-    }
+      background-color: #0a0a0a;
+      color: #f0f0f0;
+    }nav {
+  background-color: #111;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.menu {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.menu a {
+  color: #f0f0f0;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.language-switch {
+  background: #222;
+  color: #fff;
+  border: none;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+header {
+  text-align: center;
+  padding: 4rem 2rem;
+}
+
+header h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+header p {
+  font-size: 1.2rem;
+  color: #ccc;
+}
+
+.gallery-preview {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 2rem;
+  padding: 2rem;
+}
+
+.gallery-preview a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.gallery-preview img {
+  width: 250px;
+  border-radius: 10px;
+  transition: transform 0.3s;
+}
+
+.gallery-preview img:hover {
+  transform: scale(1.05);
+}
+
   </style>
 </head>
 <body>
   <nav>
-    <span class="menu-toggle" onclick="toggleMenu()">☰</span>
-    <ul class="nav-links" id="navLinks">
-      <li><a href="#gallery">Artworks</a></li>
-      <li><a href="#about">About</a></li>
-      <li><a href="#contact">Contact</a></li>
-    </ul>
-    <button class="lang-btn" onclick="toggleLanguage()">عربي</button>
-  </nav>  <header>
-    <h1 id="title">Chaos Art Gallery</h1>
-    <p id="subtitle">Visual reflections from an unfinished soul</p>
-  </header>  <section id="gallery" class="gallery">
-    <div class="art-piece">
-      <a href="unfinished.html">
-        <img src="https://i.postimg.cc/Y0NLbFHy/IMG-20250526-135807.jpg" alt="Unfinished" />
-      </a>
-      <h3 id="art-title">Unfinished</h3>
-      <p id="art-desc">A visual embodiment of the human as an incomplete being, perhaps a moment of reflection that man has not yet reached the level of being fully human.</p>
+    <div class="logo">Chaos Art</div>
+    <div class="menu">
+      <a href="gallery.html" id="link-gallery">Gallery</a>
+      <a href="about.html" id="link-about">About</a>
+      <a href="contact.html" id="link-contact">Contact</a>
     </div>
-  </section>  <section id="about">
-    <h2 id="about-title">About the Artist</h2>
-    <p id="about-desc">This site showcases the chaotic, melancholic, and profound artistic reflections of a soul that dwells between dreams and shadows. Each painting is a mirror of what remains unspoken.</p>
-  </section>  <section id="contact">
-    <h2 id="contact-title">Contact</h2>
-    <p id="contact-desc">If you want to collaborate or request custom artwork, contact me at:</p>
-    <p><strong>Email:</strong> artofchaos25@gmail.com</p>
-  </section>  <footer>
-    <p>&copy; 2025 Chaos Art. All rights reserved.</p>
-  </footer>  <script>
-    function toggleMenu() {
-      const links = document.getElementById('navLinks');
-      links.classList.toggle('active');
-    }
-
+    <button class="language-switch" onclick="toggleLanguage()">AR</button>
+  </nav>  <header>
+    <h1 id="welcome-title">Welcome to Chaos Art</h1>
+    <p id="welcome-text">Explore melancholic, symbolic, and introspective works.</p>
+  </header>  <section class="gallery-preview">
+    <a href="unfinished.html">
+      <img src="https://i.postimg.cc/Y0NLbFHy/IMG-20250526-135807.jpg" alt="Unfinished">
+    </a>
+  </section>  <script>
     let isArabic = false;
+
     function toggleLanguage() {
       isArabic = !isArabic;
-      document.querySelector('.lang-btn').textContent = isArabic ? 'English' : 'عربي';
-      document.getElementById('title').textContent = isArabic ? 'معرض فن الفوضى' : 'Chaos Art Gallery';
-      document.getElementById('subtitle').textContent = isArabic ? 'تجليات بصرية لروح غير مكتملة' : 'Visual reflections from an unfinished soul';
-      document.getElementById('art-title').textContent = isArabic ? 'غير مكتمل' : 'Unfinished';
-      document.getElementById('art-desc').textContent = isArabic ? 'تجسيد بصري للإنسان ككائن غير مكتمل، وربما لحظة تأمل أن الإنسان لم يصل بعد إلى مستوى الإنسان الكامل.' : 'A visual embodiment of the human as an incomplete being, perhaps a moment of reflection that man has not yet reached the level of being fully human.';
-      document.getElementById('about-title').textContent = isArabic ? 'عن الفنان' : 'About the Artist';
-      document.getElementById('about-desc').textContent = isArabic ? 'يعرض هذا الموقع تأملات فنية فوضوية ومليئة بالكآبة، تجسد روحاً تعيش بين الأحلام والظلال. كل لوحة هي مرآة لما لم يُقال.' : 'This site showcases the chaotic, melancholic, and profound artistic reflections of a soul that dwells between dreams and shadows. Each painting is a mirror of what remains unspoken.';
-      document.getElementById('contact-title').textContent = isArabic ? 'تواصل' : 'Contact';
-      document.getElementById('contact-desc').textContent = isArabic ? 'إذا كنت ترغب في التعاون أو طلب عمل فني مخصص، اتصل بي على:' : 'If you want to collaborate or request custom artwork, contact me at:';
+
+      document.querySelector('.language-switch').textContent = isArabic ? 'EN' : 'AR';
+      document.getElementById('link-gallery').textContent = isArabic ? 'اللوحات' : 'Gallery';
+      document.getElementById('link-about').textContent = isArabic ? 'من أنا' : 'About';
+      document.getElementById('link-contact').textContent = isArabic ? 'تواصل' : 'Contact';
+      document.getElementById('welcome-title').textContent = isArabic ? 'مرحباً بك في Chaos Art' : 'Welcome to Chaos Art';
+      document.getElementById('welcome-text').textContent = isArabic ? 'استكشف أعمالاً حزينة، رمزية، وتأملية.' : 'Explore melancholic, symbolic, and introspective works.';
     }
   </script></body>
 </html>
